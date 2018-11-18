@@ -6,18 +6,6 @@ __author__ = 'ralph'
 __mtime__ = '2018/11/12'
 # code is far away from bugs with the god animal protecting
     I love animals. They taste delicious.
-             ┏┓   ┏┓
-            ┏┛┻━━━┛┻┓
-            ┃       ┃
-            ┃ ┳┛ ┗┳ ┃
-            ┃   ┻   ┃
-            ┗━┓   ┏━┛
-              ┃   ┗━━━┓
-              ┃神兽保佑┣┓
-              ┃永无BUG  ┏┛
-              ┗┓┓┏━┳┓┏━┛
-               ┃┫┫ ┃┫┫
-               ┗┻┛ ┗┻┛
 """
 import sys
 from socket import *
@@ -53,16 +41,17 @@ def check_location(point):
 
 
 class Client(object):
-    def __init__(self):
+    def __init__(self, signal):
         self.cli_sock = socket(AF_INET, SOCK_STREAM)
         self.cli_sock.connect(HOST)
-        
-        self.room_id = -1
-        self.user_color = 0
-        self.is_win = 0
-        
-        self.board = self.init_game()
-    
+        self.signal = signal
+
+    def check_signal(self):
+        pass
+
+    def do_recv(self):
+        pass
+
     def recv_message(self, data):
         try:
             data = json.loads(data.decode("utf-8"))
@@ -117,11 +106,6 @@ class Client(object):
         }
         self.send_message(request)
     
-    def win(self):
-        self.room_id = -1
-        self.user_color = 0
-        self.is_win = 0
-    
     def recv_join(self, req):
         self.room_id = req['room_id']
         self.user_color = req['user_color']
@@ -135,20 +119,7 @@ class Client(object):
         point_location = req['point_location']
         user_color = BLACK if self.user_color == WHITE else WHITE
         
-        self.put_point(point_location, user_color)
-        
         if status == "1":
             return True
         else:
             return False
-    
-    def init_game(self):
-        return [[EMPTY for i in range(15)] for j in range(15)]
-    
-    def put_point(self, point_location, user_color):
-        if not check_location(point_location):
-            return False
-        else:
-            x, y = point_location
-            self.board[x][y] = user_color
-            return True

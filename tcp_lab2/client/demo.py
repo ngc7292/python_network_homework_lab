@@ -6,24 +6,38 @@ __author__ = 'ralph'
 __mtime__ = '2018/11/13'
 # code is far away from bugs with the god animal protecting
     I love animals. They taste delicious.
-             ┏┓   ┏┓
-            ┏┛┻━━━┛┻┓
-            ┃       ┃
-            ┃ ┳┛ ┗┳ ┃
-            ┃   ┻   ┃
-            ┗━┓   ┏━┛
-              ┃   ┗━━━┓
-              ┃神兽保佑┣┓
-              ┃永无BUG  ┏┛
-              ┗┓┓┏━┳┓┏━┛
-               ┃┫┫ ┃┫┫
-               ┗┻┛ ┗┻┛
 """
-import sys,time
-for i in range(101):
-    s1 = "\r%d%%[%s%s]\n"%(i,"*"*i," "*(100-i))
-    s2 = "\r%d%%[%s%s]"%(i,"*"*i," "*(100-i))
-    sys.stdout.write(s1)
-    sys.stdout.write(s2)
-    sys.stdout.flush()
-    time.sleep(0.03)
+#!/usr/bin/env python3
+
+import time
+from multiprocessing import Process,Queue
+
+q = Queue()  #创建列队，不传数字表示列队不限数量
+for i in range(11):
+    q.put(i)
+
+def A():
+    while 1:
+        try:
+            num = q.get_nowait()
+            print('我是进程A,取出数字:%d'%num)
+
+            time.sleep(1)
+        except :
+            break
+
+def B():
+    while 1:
+        try:
+            num = q.get_nowait()
+            print('我是进程B,取出数字:%d'%num)
+            time.sleep(1)
+        except :
+            break
+
+if __name__ == '__main__':
+
+    p1 = Process(target = A)
+    p2 = Process(target = B)
+    p1.start()
+    p2.start()

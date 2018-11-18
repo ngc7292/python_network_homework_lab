@@ -22,6 +22,9 @@
           <option value="GoBang.gobangGUI.chessboard" />
           <option value="GoBang.gobangGUI.ai" />
           <option value="client.client_ui.chess_board" />
+          <option value="PyQt5.QtCore" />
+          <option value="PyQt5.*" />
+          <option value="server.server.gomoku" />
         </list>
       </option>
     </inspection_tool>
