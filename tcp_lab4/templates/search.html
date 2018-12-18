@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<head>
+
+<title>Home</title>
+
+<!-- For-Mobile-Apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //For-Mobile-Apps -->
+
+<!-- Style --> <link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all" />
+
+<!-- Web-Fonts -->
+<link href='http://fonts.useso.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>
+<!-- //Web-Fonts -->
+
+</head>
+<!-- Head -->
+
+
+
+<!-- Body -->
+<body onload="startTime()">
+
+
+
+	<!-- Heading -->
+	<h1>NEW YORK WEATHER WIDGET</h1>
+	<!-- //Headng -->
+
+
+
+		<!-- Container -->
+		<div class="container" style="width: 80%">
+
+			<!-- City -->
+			<div class="city">
+				<div class="title">
+					<h2>{{ name }}</h2>
+					<h3>{{ name }}</h3>
+				</div>
+				<div class="date-time">
+					<div class="dmy">
+						<div id="txt"></div>
+						<div class="date">
+							<!-- Date-JavaScript -->
+							<script type="text/javascript">
+							var mydate=new Date()
+							var year=mydate.getYear()
+							if(year<1000)
+							year+=1900
+							var day=mydate.getDay()
+							var month=mydate.getMonth()
+							var daym=mydate.getDate()
+							if(daym<10)
+							daym="0"+daym
+							var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+							var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+							document.write(""+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"")
+							</script>
+							<!-- //Date-JavaScript -->
+						</div>
+					</div>
+					<div class="temperature">
+						<p>20°<span>C</span></p>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<!-- //City -->
+
+
+
+			<!-- Forecast -->
+			<div class="forecast" style="width: 30%">
+				<div class="forecast-icon">
+					<img src="../static/images/forecast.png" alt="New York Weather Widget">
+				</div>
+				<div class="today-weather">
+					<h3>Cloudy</h3>
+					<ul>
+						<li>{{ weather_data[0].date }} <span> {{ weather_data[0].weather }}</span><span> {{ weather_data[0].tem }}</span></li>
+						<li>{{ weather_data[1].date }} <span> {{ weather_data[1].weather }}</span><span> {{ weather_data[1].tem }}</span></li>
+						<li>{{ weather_data[2].date }} <span> {{ weather_data[2].weather }}</span><span> {{ weather_data[2].tem }}</span></li>
+						<li>{{ weather_data[3].date }} <span> {{ weather_data[3].weather }}</span><span> {{ weather_data[3].tem }}</span></li>
+						<li>{{ weather_data[4].date }} <span> {{ weather_data[4].weather }}</span><span> {{ weather_data[4].tem }}</span></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //Forecast -->
+			<div class="clear"></div>
+
+		</div>
+		<!-- //Container -->
+
+
+
+	<!-- Footer -->
+	<div class="footer">
+
+		<!-- Copyright -->
+		<div class="copyright">
+			<p>Copyright &copy; ngc7293 All rights reserved.</p>
+		</div>
+		<!-- //Copyright -->
+
+	</div>
+	<!-- //Footer -->
+
+
+
+	<!-- Custom-JavaScript-Files -->
+
+		<!-- Time-JavaScript -->
+		<script>
+			function startTime() {
+				var today = new Date();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('txt').innerHTML =
+				h + ":" + m + ":" + s;
+				var t = setTimeout(startTime, 500);
+				}
+				function checkTime(i) {
+				if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
+				return i;
+			}
+		</script>
+		<!-- //Time-JavaScript -->
+
+	<!-- //Custom-JavaScript-File-Links -->
+
+</body>
+</html>

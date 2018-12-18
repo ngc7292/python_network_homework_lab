@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="822cdaa4-73ba-468a-855a-ba3b52637345" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tcp_lab2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tcp_lab2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoBang" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/board.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/board.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client_ui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/game.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/gomoku.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.py" afterDir="false" />
-    </list>
+    <list default="true" id="822cdaa4-73ba-468a-855a-ba3b52637345" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +117,7 @@
     <session id="-1162080105">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -489,7 +474,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3210191" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3210191" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
