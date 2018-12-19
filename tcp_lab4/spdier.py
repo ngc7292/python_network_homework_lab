@@ -94,7 +94,7 @@ def index():
     global citys_dict
     city_list = get_random_citys()
     weather_list = [get_weather(citys_dict[city]) for city in city_list]
-    print(weather_list)
+#     print(weather_list)
     return render_template("index.html", city_list=city_list, weather_list=weather_list)
 
 
